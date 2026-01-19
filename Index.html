@@ -7,6 +7,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <h1>BMI Calculator</h1>
+        <div class="unit-toggle">
+            <button class="unit-btn active" data-unit="metric">Metric</button>
+            <button class="unit-btn" data-unit="imperial">Imperial</button>
+        </div>
+
+        <div class="input-group">
+            <label for="height">Height(<span class="unit-label">cm</span>)</label>
+            <input type="number" id="height" placeholder="Enter height" step="0.1">
+        </div>
+        
+        <div class="input-group">
+            <label for="weight">Weight (<span class="weight-unit">kg</span>)</label>
+            <input type="number" id="weight" placeholder="Enter weight" step="0.1">
+        </div>
+
+        <button onclick="calculateBMI()">Calculate BMI</button>
+
+        <div class="result" id="result">
+            <div class="bmi-value" id="bmiValue"></div>
+            <div class="bmi-category" id="bmiCategory"></div>
+            <div class="bmi-message" id="bmiMessage"></div>
+            <button class="reset-btn" onclick="resetCalculator()">Reset</button>
+        </div>
+    </div>
 
     
     <script src="script.js"></script>
