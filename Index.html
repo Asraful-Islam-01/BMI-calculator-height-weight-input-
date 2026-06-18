@@ -13,17 +13,23 @@
         <form id="bmiForm">
             <div class="form-group">
                 <label for="weight">Weight (Kg)</label>
-                <input type="number" placeholder="Enter your weight" step="0.1" min="0">
+                <input type="number" id="weight" placeholder="Enter your weight" step="0.1" min="0">
             </div>
 
 
-            <div class="From-group">
+            <div class="from-group">
                 <label for="height">Height (cm)</label>
-                <input type="number" placeholder="Enter your height" step="0.1", min="0">
+                <input type="number" id="height" placeholder="Enter your height" step="0.1" min="0">
             </div>
 
             <button type="submit" class="btn">Calculate BMI</button>
         </form>
+
+        <div class="result" id="result">
+            <p class="label">Your BMI is</p>
+            <p class="bmi-value" id="bmiValue">0</p>
+            <p class="bmi-category" id="bmiCategory">-</p>
+        </div>
     </div>
 
 
