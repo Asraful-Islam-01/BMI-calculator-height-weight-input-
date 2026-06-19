@@ -5,46 +5,44 @@ const resultDiv = document.getElementById("result");
 const bmiValueDiv = document.getElementById("bmiValue");
 const bmiCategoryDiv = document.getElementById("bmiCategory");
 
-form.addEventListener("submit", (e)=> {
+form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const weight = parseFloat(weightInput.value);
+
     const height = parseFloat(heightInput.value);
 
     if (!weight || !height || weight <= 0 || height <= 0) {
-        alert("Please Enter a Valid Weight and height")
+        alert("Plese enter a valid weight and height");
         return;
     }
 
-    // Convert cm to m
-    const heightInMeters = height / 100; 
-    // BMI = weight(kg) / height(m)^2
+    const heightInMeters = height / 100;
+
     const bmi = (weight / (heightInMeters * heightInMeters)).toFixed(1);
 
-    //Display BMI value
     bmiValueDiv.textContent = bmi;
 
-    //Determine category
+    //Determine BMI category//
     let category, categoryClass;
+
     if (bmi < 18.5) {
         category = "Underweight";
-        categoryClass = "underweight"
+        categoryClass = "underweight";
     } else if (bmi < 25) {
-        category = "Normar Weight"
-        categoryClass = "underweight"
+        category = "Normal Weight";
+        categoryClass = "normal";
     } else if (bmi < 30) {
-        category = "Overweight"
-        categoryClass = "overweight"
+        category = "Overweight";
+        categoryClass = "overweight";
     } else {
         category = "Obese";
         categoryClass = "obese";
     }
 
-    // Update category display 
+
     bmiCategoryDiv.textContent = category;
     bmiCategoryDiv.className = `bmi-category ${categoryClass}`;
 
-    // Show result
     resultDiv.classList.add("show");
-    
-});
+});  
